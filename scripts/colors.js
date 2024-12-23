@@ -1,20 +1,21 @@
 
 
-export const metalOptions = async() => {
-    document.addEventListener("change",handleMetalChange)
-    const getData = await fetch("http://localhost:8088/metals")
-    const metals= await getData.json()
+export const colorOptions = async() => {
+    // document.addEventListener("change",handleColorChange)
+    const getData = await fetch("http://localhost:3000/colors")
+    const colors= await getData.json()
 
-     let optionsHTML = ""
+     let optionsHTML = "<select><option>Pick a Paint</option>"
 
-     const divStringArray = metals.map(
-        (metal) => {
-            return `<div>
-            <input type='radio' name='color' value='${metal.id}' /> ${metal.metal}
-            </div>`
+     const divStringArray = colors.map(
+        (color) => {
+            return `<option id='color' value='${color.id}'>${color.color}
+            </option>
+                    `
     }
 )
 optionsHTML += divStringArray.join("")
+optionsHTML +='</select>'
 
 return optionsHTML
 }

@@ -11,10 +11,10 @@
         {"id": 3, "fabric": "White Leather", "price": 4599},
         {"id": 4, "fabric": "Black Leather", "price": 4099}
     ],
-    "packages":[
+    "options":[
         {"id": 1, "package": "Basic Package (basic sound system)", "price": 1099},
         {"id": 2, "package": "Navigation Package (includes integrated navigation controls)", "price": 1599},
-        {"id": 3, "package": "Visibility Package (includes side and reat cameras)", "price": 1599},
+        {"id": 3, "package": "Visibility Package (includes side and rear cameras)", "price": 1599},
         {"id": 4, "package": "Ultra Package (includes navigation and visibility packages)", "price": 3099}
     ],
     "wheels":[
