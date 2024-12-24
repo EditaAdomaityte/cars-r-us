@@ -1,7 +1,8 @@
+import { setColorId } from "./transiantState.js"
 
 
 export const colorOptions = async() => {
-    // document.addEventListener("change",handleColorChange)
+     document.addEventListener("change",handleColorChange)
     const getData = await fetch("http://localhost:3000/colors")
     const colors= await getData.json()
 
@@ -18,5 +19,12 @@ optionsHTML += divStringArray.join("")
 optionsHTML +='</select>'
 
 return optionsHTML
+}
+
+const handleColorChange = (changeEvent) => {
+    if(changeEvent.target.name="color"){
+        const convertToNumber =parseInt(changeEvent.target.value)
+        setColorId(convertToNumber)
+    }
 }
 

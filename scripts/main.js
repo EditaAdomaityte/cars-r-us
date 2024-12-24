@@ -1,5 +1,7 @@
 import { colorOptions } from "./colors.js"
 import { fabricsOptions } from "./fabrics.js"
+import { Orders } from "./orderList.js"
+import { orderButton } from "./ordersaver.js"
 import { packagesOptions } from "./packages.js"
 import { wheelOptions } from "./wheels.js"
 
@@ -11,8 +13,8 @@ const render = async() => {
     const fabricsHTML = await  fabricsOptions()
     const packagesHTML = await packagesOptions()
     const wheelsHTML = await wheelOptions()
-    // const buttonHTML = saveOrders()
-    // const generatedList =await Orders()
+    const buttonHTML = orderButton()
+    const generatedList =await Orders()
 
     const composedHTML = `
         <h1>Cars R Us: Personal Car Builder</h1></h1>
@@ -36,6 +38,14 @@ const render = async() => {
             </section>
 
         </article>
+        </article>
+
+         <article class="order">
+         ${buttonHTML}
+
+         </article>
+
+      
     `
 
     container.innerHTML = composedHTML
@@ -48,13 +58,6 @@ render()
 //     render()
 // })
 
-//         </article>
-
-//         <article class="order">
-//         ${buttonHTML}
-
-//         </article>
-
-//         <article class="customOrders">
-//             <h2>Custom Jewelry Orders</h2>
-//             ${generatedList}
+//  <article class="customOrders">
+//              <h2>Custom Car Orders</h2>
+//             {/* ${generatedList} </article>         */}
