@@ -45,6 +45,10 @@ const render = async() => {
 
          </article>
 
+         <article class="customOrders">
+             <h2>Custom Car Orders</h2>
+            ${generatedList}
+        </article> 
       
     `
 
@@ -53,11 +57,7 @@ const render = async() => {
 
 render()
 
-// document.addEventListener("newOrderCreated", event => {
-//     console.log("State of data has changed. Regenerating HTML...")
-//     render()
-// })
-
-//  <article class="customOrders">
-//              <h2>Custom Car Orders</h2>
-//             {/* ${generatedList} </article>         */}
+document.addEventListener("newOrderCreated", event => {
+    console.log("State of data has changed. Regenerating HTML...")
+    render()
+})

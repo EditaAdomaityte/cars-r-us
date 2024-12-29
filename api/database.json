@@ -89,7 +89,18 @@
   ],
   "orders": [
     {
-      "id": 1
+      "id": 1,
+      "colorId": 2,
+      "fabricId": 2,
+      "packageId": 2,
+      "wheelId": 2
+    },
+    {
+      "id": 2,
+      "colorId": 1,
+      "fabricId": 3,
+      "packageId": 4,
+      "wheelId": 3
     }
   ]
 }

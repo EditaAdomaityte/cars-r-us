@@ -3,8 +3,8 @@ const state = {
     "id": 0,
     "colorId": 0,
     "fabricId": 0,
-    "optionId": 0,
-    "packageId": 0
+    "packageId": 0,
+    "wheelId": 0
 }
 
 export const setColorId = (chosenColor) =>{
@@ -17,19 +17,20 @@ export const setFabricId = (chosenFabric) =>{
     console.log(state)
 }
 
-export const setOptionId = (chosenOption) =>{
-    state.optionId =chosenOption
-    console.log(state)
-}
 export const setPackageId = (chosenPackage) =>{
     state.packageId = chosenPackage
     console.log(state)
 }
+export const setWheelId = (chosenWheel) =>{
+    state.wheelId = chosenWheel
+    console.log(state)
+}
+
 
 export const SaveOrderEntry = async() =>{
     const sendOrders= {
         method: "POST",
-        header: {
+        headers: {
             "Content-Type": "application/json"},
         body: JSON.stringify(state)
         }
